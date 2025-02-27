@@ -1,0 +1,107 @@
+basePath: /
+definitions:
+  model.Product:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      price:
+        type: string
+    type: object
+  request.ProductRequest:
+    properties:
+      ID:
+        type: integer
+      name:
+        type: string
+      price:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: API for Coffee Shop
+  title: Coffee Shop API
+  version: "1.0"
+paths:
+  /products:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Product'
+            type: array
+      summary: Get all products
+      tags:
+      - products
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Create product
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/request.ProductRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Product'
+      summary: Create a new product
+      tags:
+      - products
+  /products/{id}:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: Product ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Product'
+      summary: DELETE an existing product
+      tags:
+      - products
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Product ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Product update request
+        in: body
+        name: product
+        required: true
+        schema:
+          $ref: '#/definitions/request.ProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Product'
+      summary: Update an existing product
+      tags:
+      - products
+swagger: "2.0"
