@@ -15,6 +15,7 @@
 - goose -dir ./db/migration create create_products sql
 - goose -dir ./db/migration create create_users sql
 - โดยในไฟล์ migration จะเป็นการสร้าง table และ กำหนด field ต่างๆ
+
 ![image](https://github.com/user-attachments/assets/763e9769-f4b3-4ffe-8268-8877b4a3360b)
 - คำสั่งรัน migration : goose -dir ./db/migration sqlite3 coffee.db up
 
