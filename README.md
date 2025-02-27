@@ -28,3 +28,4 @@
 - ใช้ Goose ทำ Migration
 - แยกโค้ดตาม Clean Architecture
 
+#### เข้าหน้า swagger http://localhost:8080/swagger/index.html#/
