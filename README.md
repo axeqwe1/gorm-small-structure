@@ -10,7 +10,7 @@
     - Service เป็น Buisness Layer เวลาเราจะจัดการข้อมูลที่ได้รับมา จะตรวจสอบ หรือกรองข้อมูล กระกระทำทั้งหมดจะอยู่ใน service นี้ แล้วส่งไปที่ repository แต่ถ้าฝั่ง repository มีการ return ข้อมูลกลับมาก็จะนำข้อมูลที่ได้รับมาส่งกลับไปที่ controller
     - Repository เป็นในส่วนการจัดการกับ Database หลักจากรับ request มาแล้วก็จะนำ request ไปทำการ query ต่างๆ เอาง่ายๆ เป็นส่วนในการติดต่อฐานข้อมูล แล้วส่งกลับไปที่ service
     - Model ทำหน้าที่เป็นตัวเก็บ structure หรือ Object ของข้อมูลจาก table ของฐานข้อมูล
-
+   - routes เป็นfolder ที่เก็บไฟล์ router ไว้ สำหรับใช้ในการกำหนด path api 
 - วิธีสร้างไฟล์ migration sql
 - goose -dir ./db/migration create create_products sql
 - goose -dir ./db/migration create create_users sql
